@@ -1,0 +1,39 @@
+{
+  "includedFields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "float"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "datetime"
+    },
+    {
+      "fieldName": "tte",
+      "fieldType": "int"
+    }
+  ],
+  "streamDef": {
+    "info": "tte",
+    "version": 1,
+    "streams": [
+      {
+        "info": "tte",
+        "source": "file://data/data_file.csv",
+        "columns": [
+          "*"
+        ]
+      }
+    ]
+  },
+  "inferenceType": "TemporalMultiStep",
+  "inferenceArgs": {
+    "predictionSteps": [
+      1
+    ],
+    "predictedField": "tte"
+  },
+  "iterationCount": -1,
+  "swarmSize": "large",
+  "metricWindow": 1000
+}
